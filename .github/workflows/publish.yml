@@ -40,16 +40,19 @@ jobs:
       #   run: |
       #     yarn test
 
-      - name: Check version changes
-        uses: EndBug/version-check@v1
-        id: check
+      # - name: Check version changes
+      #   uses: EndBug/version-check@v1
+      #   id: check
+      #   with:
+      #     diff-search: true
+      #     token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Version update detected
-        if: steps.check.outputs.changed == 'true'
+        # if: steps.check.outputs.changed == 'true'
         run: 'echo "Version change found! New version: ${{ steps.check.outputs.version }} (${{ steps.check.outputs.type }})"'
   
       - name: Publish
-        if: steps.check.outputs.changed == 'true'
+        # if: steps.check.outputs.changed == 'true'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           GITHUB_REF: ${{ github.ref }}
@@ -64,7 +67,8 @@ jobs:
       #   run: bash <(curl -s https://codecov.io/bash) -f coverage/lcov.info
 
       - name: Create Release
-        if: github.ref == 'refs/heads/master' && steps.check.outputs.changed == 'true'
+        # if: github.ref == 'refs/heads/master' && steps.check.outputs.changed == 'true'
+        if: github.ref == 'refs/heads/master'
         id: create_release
         uses: actions/create-release@latest
         env:
