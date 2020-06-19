@@ -1,4 +1,12 @@
-# The Official DocuSign Node Client
+~~The Official DocuSign Node Client~~
+
+# Side's Customized Version of DocuSign Node Client
+
+[Side Jira ticket for tracking this library](https://residenetwork.atlassian.net/browse/CORE-867)
+
+[GitHub issue raised in support on the official library repo](https://github.com/docusign/docusign-node-client/issues/183)
+
+***
 
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
@@ -34,7 +42,7 @@ This open-source SDK is provided for cases where you would like to make addition
 ## NPM:
 
 1. Open your preferred command-line console, then navigate to your project.
-2. In the console, type the following commands:  
+2. In the console, type the following commands:
    **npm install docusign-esign -save**
 
 
